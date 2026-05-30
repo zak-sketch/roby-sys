@@ -1,0 +1,1138 @@
+
+in this website add a section (for our Blogs add this link with related custom image 
+
+
+)
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotech Digital Solution | AI, Robotics & Digital Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0A1A3A;
+            --tech-black: #050A14;
+            --electric-cyan: #00F3FF;
+            --neon-green: #00FF9D;
+            --accent-purple: #7B61FF;
+            --neutral-white: #FFFFFF;
+            --neutral-grey: #F5F7FA;
+            --neutral-dark: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--neutral-dark);
+            background-color: var(--neutral-grey);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 26, 58, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--neutral-white);
+            margin-left: 10px;
+        }
+        
+        .logo-highlight {
+            color: var(--electric-cyan);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--neutral-white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--electric-cyan);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--neon-green);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neutral-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--tech-black) 0%, var(--primary-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300f3ff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--neutral-white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--neon-green);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--neon-green);
+            color: var(--tech-black);
+            border: 2px solid var(--neon-green);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--neon-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--neutral-white);
+            border: 2px solid var(--electric-cyan);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--electric-cyan);
+            color: var(--tech-black);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 243, 255, 0.2);
+        }
+        
+        /* Services Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--neon-green);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--neutral-white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 243, 255, 0.1);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--electric-cyan);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--electric-cyan);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .service-btn {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .service-btn:hover {
+            background-color: var(--primary-blue);
+            color: var(--neutral-white);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--neutral-white);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: var(--neutral-grey);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            background-color: var(--primary-blue);
+            color: var(--neutral-white);
+        }
+        
+        .value-card:hover h4,
+        .value-card:hover .value-icon {
+            color: var(--neutral-white);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--electric-cyan);
+            margin-bottom: 15px;
+        }
+        
+        .value-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-blue);
+            color: var(--neutral-white);
+        }
+        
+        .contact .section-title h2,
+        .contact .section-title p {
+            color: var(--neutral-white);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 243, 255, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--neutral-white);
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--electric-cyan);
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-methods {
+            margin-bottom: 40px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--neon-green);
+            margin-right: 15px;
+            width: 50px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--tech-black);
+            color: var(--neutral-white);
+            padding: 70px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--neutral-white);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h4 {
+            color: var(--neutral-white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--electric-cyan);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#00F3FF"/>
+                    <path d="M20 10L25 15L20 20L15 15L20 10Z" fill="#0A1A3A"/>
+                    <path d="M25 15L30 20L25 25L20 20L25 15Z" fill="#0A1A3A"/>
+                    <path d="M15 15L20 20L15 25L10 20L15 15Z" fill="#0A1A3A"/>
+                    <path d="M20 20L25 25L20 30L15 25L20 20Z" fill="#0A1A3A"/>
+                </svg>
+                <div class="logo-text">Robotech<span class="logo-highlight">Digital</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#ai-robotics">AI & Robotics</a></li>
+                    <li><a href="#training">Training</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Powering the Future with <span>AI, Robotics & Smart Digital Solutions</span></h1>
+                <p>We design intelligent systems, modern websites, and secure networks that grow businesses across Africa and beyond. Innovating today for tomorrow's challenges.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
+                    <a href="#services" class="btn btn-secondary">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Digital Services</h2>
+                <p>Comprehensive technology solutions designed to transform your business and drive innovation in the digital age.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Business Systems</h3>
+                    <p>Intelligent automation, expense tracking, smart quotations, and predictive analytics to optimize your business operations.</p>
+                    <button class="service-btn">Request Service</button>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Robotics & STEM Training</h3>
+                    <p>Cutting-edge robotics solutions and STEM education programs for schools, institutions, and innovation hubs.</p>
+                    <button class="service-btn">Request Service</button>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web & Mobile App Development</h3>
+                    <p>Custom websites, progressive web apps, and mobile applications built with modern frameworks and technologies.</p>
+                    <button class="service-btn">Request Service</button>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>ICT Support & Networking</h3>
+                    <p>Complete IT infrastructure setup, network security, cloud solutions, and ongoing technical support.</p>
+                    <button class="service-btn">Request Service</button>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing & Branding</h3>
+                    <p>Strategic online marketing campaigns, SEO optimization, social media management, and brand development.</p>
+                    <button class="service-btn">Request Service</button>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>CCTV & Security Solutions</h3>
+                    <p>Advanced surveillance systems, access control, and integrated security solutions for businesses and homes.</p>
+                    <button class="service-btn">Request Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI & Robotics Section -->
+    <section class="section" id="ai-robotics" style="background-color: var(--neutral-white);">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>AI & Robotics Innovation</h2>
+                <p>Leading Africa's transformation through intelligent automation and robotics technology.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Smart AI Solutions for Modern Businesses</h3>
+                    <p>Our AI systems are designed to streamline operations, reduce costs, and provide actionable insights. From automated expense tracking to smart quotation systems, we implement AI that works for your business.</p>
+                    
+                    <h3 style="margin-top: 30px;">Robotics Development Roadmap</h3>
+                    <p>We're building the future of robotics in Africa with educational programs for kids, research initiatives, and practical applications for industry. Our robotics solutions range from basic training kits to advanced automated systems.</p>
+                    
+                    <div class="values-grid" style="margin-top: 30px;">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Innovation</h4>
+                            <p>Pushing boundaries with cutting-edge technology</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4>Automation</h4>
+                            <p>Streamlining processes for maximum efficiency</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in">
+                    <!-- AI/Robotics visual representation -->
+                    <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--tech-black) 100%); height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: white; padding: 20px;">
+                            <i class="fas fa-robot" style="font-size: 5rem; color: var(--neon-green); margin-bottom: 20px;"></i>
+                            <h3 style="color: white;">AI & Robotics Hub</h3>
+                            <p>Interactive visualization of our intelligent systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section class="section" id="training">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Training & Education</h2>
+                <p>Empowering the next generation of African tech leaders through hands-on learning and skills development.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Training Card 1 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Coding for Kids</h3>
+                    <p>Fun, interactive programming courses designed to introduce children to the world of coding and computational thinking.</p>
+                    <button class="service-btn">Enroll Now</button>
+                </div>
+                
+                <!-- Training Card 2 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Robotics Workshops</h3>
+                    <p>Hands-on robotics workshops for schools and institutions, covering both hardware assembly and programming.</p>
+                    <button class="service-btn">Enroll Now</button>
+                </div>
+                
+                <!-- Training Card 3 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Web Design Training</h3>
+                    <p>Comprehensive web design courses covering HTML, CSS, JavaScript, and modern frameworks for aspiring developers.</p>
+                    <button class="service-btn">Enroll Now</button>
+                </div>
+                
+                <!-- Training Card 4 -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>ICT Skills Development</h3>
+                    <p>Practical IT training programs designed to build essential digital skills for the modern workplace.</p>
+                    <button class="service-btn">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>About Robotech Digital</h2>
+                <p>Driving digital transformation across Africa with innovative, reliable, and future-focused technology solutions.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <!-- Team/Office representation -->
+                    <div style="background: linear-gradient(135deg, var(--electric-cyan) 0%, var(--neon-green) 100%); height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--tech-black); padding: 20px;">
+                            <i class="fas fa-users" style="font-size: 5rem; color: var(--tech-black); margin-bottom: 20px;"></i>
+                            <h3 style="color: var(--tech-black);">Our African Tech Team</h3>
+                            <p>Innovators, developers, and technology experts</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text fade-in">
+                    <h3>Our Mission & Vision</h3>
+                    <p>Robotech Digital Solution is committed to bridging the digital divide in Africa by providing accessible, innovative technology solutions. We believe in empowering businesses, educators, and individuals with tools for success in the digital economy.</p>
+                    
+                    <h3 style="margin-top: 30px;">Core Values</h3>
+                    
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>Innovation</h4>
+                            <p>Continuously exploring new technologies and approaches</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>Reliability</h4>
+                            <p>Consistent, dependable service and support</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Growth</h4>
+                            <p>Fostering development for our clients and community</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Integrity</h4>
+                            <p>Ethical practices and transparent operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Let's Build Something Smart Together</h2>
+                <p>Get in touch with our team to discuss your technology needs and start your digital transformation journey.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-form fade-in">
+                    <h3 style="color: var(--neutral-white); margin-bottom: 30px;">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="ai">AI Solutions</option>
+                                <option value="robotics">Robotics</option>
+                                <option value="web">Web Development</option>
+                                <option value="ict">ICT Support</option>
+                                <option value="training">Training</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info fade-in">
+                    <h3 style="color: var(--neutral-white); margin-bottom: 30px;">Contact Information</h3>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--neutral-white);">Phone</h4>
+                                <p>+254 700 123 456</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--neutral-white);">Email</h4>
+                                <p>info@robotechdigital.co.ke</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--neutral-white);">Location</h4>
+                                <p>Nairobi, Kenya | Serving Across Africa</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 10px; border: 1px solid rgba(0, 243, 255, 0.1);">
+                        <h4 style="color: var(--neutral-white); margin-bottom: 15px;">Business Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Robotech<span style="color: var(--electric-cyan);">Digital</span></div>
+                    <p>Leading Africa's digital transformation through innovative AI, robotics, and technology solutions. Empowering businesses and individuals for the future.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="#" style="color: var(--neutral-white); margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: var(--neutral-white); margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--neutral-white); margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--neutral-white); font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#ai-robotics">AI & Robotics</a></li>
+                        <li><a href="#training">Training</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">AI Business Systems</a></li>
+                        <li><a href="#">Robotics Solutions</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">ICT Support</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i> +254 700 123 456</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@robotechdigital.co.ke</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Robotech Digital Solution. All rights reserved. | Designed with innovation for Africa's digital future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/254700123456?text=Hello%20Robotech%20Digital%20Solution%2C%20I%20would%20like%20to%20inquire%20about%20your%20services" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Initial check
+        fadeInOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, this would send the data to a backend
+            // For now, we'll show a success message
+            alert(`Thank you ${name}! Your message has been received. We'll contact you at ${email} regarding ${service} services shortly.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
