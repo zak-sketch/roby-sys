@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #0A1A3A;
@@ -992,34 +993,77 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="40" rx="8" fill="#00F3FF" />
-                    <path d="M20 10L25 15L20 20L15 15L20 10Z" fill="#0A1A3A" />
-                    <path d="M25 15L30 20L25 25L20 20L25 15Z" fill="#0A1A3A" />
-                    <path d="M15 15L20 20L15 25L10 20L15 15Z" fill="#0A1A3A" />
-                    <path d="M20 20L25 25L20 30L15 25L20 20Z" fill="#0A1A3A" />
-                </svg>
-                <div class="logo-text">Robotech<span class="logo-highlight">Digital</span></div>
+    <header style="position:sticky;top:0;z-index:1000;background:rgba(5,10,25,0.97);backdrop-filter:blur(15px);border-bottom:1px solid rgba(0,243,255,0.25);box-shadow:0 0 25px rgba(0,243,255,0.15);padding:12px 0;">
+
+    <div class="container header-container" style="display:flex;justify-content:space-between;align-items:center;">
+
+        <a href="index.html" style="display:flex;align-items:center;gap:15px;text-decoration:none;">
+
+            <img src="logo.png" alt="Robotech Digital Logo"
+                style="width:65px;height:65px;object-fit:contain;filter:drop-shadow(0 0 8px #00f3ff) drop-shadow(0 0 15px #00f3ff);">
+
+            <div style="display:flex;flex-direction:column;line-height:1.1;">
+                <span style="color:#ffffff;font-size:1.6rem;font-weight:800;letter-spacing:2px;font-family:'Orbitron',sans-serif;">
+                    ROBOTECH
+                </span>
+
+                <span style="color:#00f3ff;font-size:0.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;font-family:'Orbitron',sans-serif;">
+                    AI • CYBERSECURITY • ROBOTICS
+                </span>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#ai-robotics">AI & Robotics</a></li>
-                    <li><a href="#training">Training</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"
+            style="background:none;border:none;color:#00f3ff;font-size:1.5rem;cursor:pointer;">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul id="navMenu"
+                style="display:flex;gap:25px;list-style:none;margin:0;padding:0;align-items:center;">
+
+                <li><a href="#home"
+                        style="color:#d8f9ff;text-decoration:none;font-weight:600;letter-spacing:1px;">HOME</a>
+                </li>
+
+                <li><a href="#services"
+                        style="color:#d8f9ff;text-decoration:none;font-weight:600;letter-spacing:1px;">SERVICES</a>
+                </li>
+
+                <li><a href="#ai-robotics"
+                        style="color:#d8f9ff;text-decoration:none;font-weight:600;letter-spacing:1px;">AI &
+                        ROBOTICS</a></li>
+
+                <li><a href="#training"
+                        style="color:#d8f9ff;text-decoration:none;font-weight:600;letter-spacing:1px;">TRAINING</a>
+                </li>
+
+                <li><a href="#blog"
+                        style="color:#d8f9ff;text-decoration:none;font-weight:600;letter-spacing:1px;">BLOG</a>
+                </li>
+
+                <li><a href="#about"
+                        style="color:#d8f9ff;text-decoration:none;font-weight:600;letter-spacing:1px;">ABOUT</a>
+                </li>
+
+                <li><a href="#contact"
+                        style="color:#d8f9ff;text-decoration:none;font-weight:600;letter-spacing:1px;">CONTACT</a>
+                </li>
+
+                <li>
+                    <a href="#contact"
+                        style="background:linear-gradient(135deg,#00f3ff,#0088ff);color:#05101f;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:700;box-shadow:0 0 15px rgba(0,243,255,.5);">
+                        GET STARTED
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+</header>
 
     <!-- Hero Section with robots & office background -->
     <section class="hero" id="home">
@@ -1612,9 +1656,9 @@
                 <div class="footer-links">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Kitengela, KCA Building, Capital Center Building</li>
-                        <li><i class="fas fa-phone" style="margin-right:8px;"></i> +254 769 7000 15</li>
-                        <li><i class="fas fa-envelope" style="margin-right:8px;"></i> robotechdigital@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone" style="margin-right:8px;"></i> +254 769  7000 15</li>
+                        <li><i class="fas fa-envelope" style="margin-right:8px;"></i> info@robotechdigital.co.ke</li>
                     </ul>
                 </div>
             </div>
