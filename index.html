@@ -1024,6 +1024,44 @@
             position: relative;
             z-index: 2;
         }
+
+        /* --- NEW: image-based blog card media --- */
+        .blog-card-img.has-image { height: 185px; }
+        .blog-card-img.has-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform .6s cubic-bezier(.22, .61, .36, 1);
+        }
+        .blog-card:hover .blog-card-img.has-image img { transform: scale(1.06); }
+        .blog-card-img.has-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(5,10,20,0) 45%, rgba(5,10,20,.55) 100%);
+        }
+        .blog-card-img.has-image::before {
+            content: 'NEW';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 3;
+            font-family: 'Orbitron', sans-serif;
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            color: #05101f;
+            background: linear-gradient(135deg, var(--electric-cyan), var(--neon-green));
+            padding: 5px 10px;
+            border-radius: var(--radius-pill);
+            box-shadow: 0 4px 14px rgba(0, 243, 255, .35);
+        }
+
         .blog-card-body { padding: 20px 22px 22px; flex: 1; display: flex; flex-direction: column; }
         .blog-card-body h3 { font-size: 1.06rem; margin-bottom: 8px; line-height: 1.4; }
         .blog-card-body p { font-size: .86rem; color: var(--muted); margin-bottom: 16px; flex: 1; }
@@ -2391,8 +2429,22 @@
 
         /* ------------------------------------------------------------
            9. BLOG CARDS
+           ------------------------------------------------------------
+           Each entry supports an optional `image` (used as the card's
+           main visual). When `image` is absent, the card falls back to
+           the icon + gradient treatment.
            ------------------------------------------------------------ */
         const blogData = [
+            /* ===== NEWEST POST — uses image.png as the main image ===== */
+            { title: 'The Art of Thinking: Why Business Needs It',
+              desc: 'Why critical thinking is the most underrated business asset — and how forward-looking organisations can build it into their everyday decision-making.',
+              url: 'https://robotechdigitals.blogspot.com/2026/09/the-art-of-thinking-why-business-needs.html',
+              image: 'image.png',
+              imageAlt: 'The Art of Thinking — why business needs it',
+              icon: 'fa-brain',
+              gradient: 'linear-gradient(135deg,#0a1a3a 0%,#123a5e 100%)',
+              glow: 'rgba(0,243,255,.6)' },
+
             { title: 'A Systems Thinking Perspective on Modern Challenges',
               desc: 'Explore how interconnected thinking can solve complex problems in technology and society.',
               url: 'https://robotechdigitals.blogspot.com/2026/05/a-systems-thinking-perspective-on.html',
@@ -2480,14 +2532,23 @@
                 card.className = 'blog-card reveal';
                 card.style.transitionDelay = (i * 0.05) + 's';
 
+                // Media block: real image when provided, icon + gradient otherwise
+                const media = blog.image
+                    ? `<div class="blog-card-img has-image" style="background:${blog.gradient};">
+                           <img src="${escapeHTML(blog.image)}"
+                                alt="${escapeHTML(blog.imageAlt || blog.title)}"
+                                loading="lazy" decoding="async">
+                       </div>`
+                    : `<div class="blog-card-img" style="background:${blog.gradient};">
+                           <i class="fas ${blog.icon}" style="text-shadow:0 0 22px ${blog.glow};" aria-hidden="true"></i>
+                       </div>`;
+
                 card.innerHTML = `
-                    <div class="blog-card-img" style="background:${blog.gradient};">
-                        <i class="fas ${blog.icon}" style="text-shadow:0 0 22px ${blog.glow};" aria-hidden="true"></i>
-                    </div>
+                    ${media}
                     <div class="blog-card-body">
                         <h3>${escapeHTML(blog.title)}</h3>
                         <p>${escapeHTML(blog.desc)}</p>
-                        <a href="${blog.url}" target="_blank" rel="noopener noreferrer" class="blog-read-btn">
+                        <a href="${escapeHTML(blog.url)}" target="_blank" rel="noopener noreferrer" class="blog-read-btn">
                             Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
